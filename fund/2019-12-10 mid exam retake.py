@@ -1,5 +1,6 @@
 
 # ---------------------------------01. Disneyland Journey (Conditional Statements)-------------------------
+# https://github.com/ateneva/softuni_proj/wiki/fund_20191210_mid_exam_retake
 
 # ------- 100 points -----------------------
 

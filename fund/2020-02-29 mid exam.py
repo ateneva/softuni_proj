@@ -1,5 +1,6 @@
 
 # -------------------------01. Bonus Scoring System (Conditional Statements)-------------------------
+# https://github.com/ateneva/softuni_proj/wiki/fund_20200229_mid_exam_group_1
 
 # ------- 100 points -----------------------
 import math as m

@@ -1,5 +1,6 @@
 
 # ---------------------------------01. Black Flag (Conditional Statements)-------------------------
+# https://github.com/ateneva/softuni_proj/wiki/fund_20190806_mid_exam_retake
 
 # ------- 100 points -----------------------
 days = int(input())

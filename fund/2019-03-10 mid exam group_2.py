@@ -1,5 +1,6 @@
 
 # ********************************************** Group 2 *********************************************************
+# https://github.com/ateneva/softuni_proj/wiki/fund_20190310_mid_exam_group_2
 
 # ---------------------------------01. The Hunting Games (Conditional Statements)---------------------------------
 

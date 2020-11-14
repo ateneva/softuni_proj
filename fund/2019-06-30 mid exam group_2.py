@@ -1,5 +1,6 @@
 
 # ************************************************ Group 2 ****************************************************
+# https://github.com/ateneva/softuni_proj/wiki/fund_20190630_mid_exam_group_2
 
 # ---------------------------------01. Gift Box Coverage (Conditional Statements)---------------------------
 

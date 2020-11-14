@@ -1,5 +1,6 @@
 
 # ************************************************ Group 1 ****************************************************
+# https://github.com/ateneva/softuni_proj/wiki/fund_20190310_mid_exam_group_1
 
 # ---------------------------------01. Spring Vacation Trip (Conditional Statements)---------------------------
 

@@ -1,5 +1,6 @@
 
 # ---------------------------------01. Easter Cozonacs (Conditional Statements)------------------------------
+# https://github.com/ateneva/softuni_proj/wiki/fund_20190416_mid_exam_retake
 
 # ------- 100 points -----------------------
 
