@@ -1,5 +1,6 @@
 
-# 08. Feed the Animals (exam problem)--------------------------------------------------------
+# ---------------08. Feed the Animals (exam problem)---------------------------
+
 # --------------70 points ------------------------------------------
 def print_dict(dictionary, template):
     for (key, value) in dictionary.items():

@@ -1,8 +1,6 @@
 
-# Problem statement in 
+# ------------------------07. easter gifts (exam problem) ----------------------
 # https://github.com/ateneva/softuni_proj/wiki/fund_lists_07.easter_gifts
-
-# ------------------------07. easter gifts (exam problem) ------------------------------------------------------
 
 gifts = input().split(' ')
 wish = input()

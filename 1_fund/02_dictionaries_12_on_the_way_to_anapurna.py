@@ -1,6 +1,6 @@
 
+# --------------09. On the Way to Annapurna (exam problem) ---------------------
 
-# 09. On the Way to Annapurna (exam problem) ------------------------------------------------
 # --------------100 points ------------------------------------------
 commands = input()
 stores = {}

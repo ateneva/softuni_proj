@@ -1,5 +1,6 @@
 
-# 10. Practice Sessions (exam problem) ------------------------------------------------------
+# -----------------------10. Practice Sessions (exam problem) ------------------
+
 # -------100 points -------------------
 road_info = input()
 roads = {}

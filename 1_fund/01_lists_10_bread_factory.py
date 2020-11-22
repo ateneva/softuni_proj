@@ -1,8 +1,6 @@
 
-# Problem statement in
+# ------------------------10. Bread Factory (exam problem) ---------------------
 # https://github.com/ateneva/softuni_proj/wiki/fund_lists_10.bread_factory
-
-# ------------------------10. Bread Factory (exam problem) -----------------------------------------------------
 
 energy = 100
 coins = 100

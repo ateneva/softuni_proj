@@ -1,8 +1,6 @@
 
-# Problem statement in
+# ------------------------09. Hello, France (exam problem) ---------------------
 # https://github.com/ateneva/softuni_proj/wiki/fund_lists_09.hello_france
-
-# ------------------------09. Hello, France (exam problem) -----------------------------------------------------
 
 items = input().split('|')
 budget = float(input())

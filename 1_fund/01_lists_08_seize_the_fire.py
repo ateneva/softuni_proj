@@ -1,8 +1,6 @@
 
-# Problem statement in
+# ------------------------08. Seize the Fire (exam problem) --------------------
 # https://github.com/ateneva/softuni_proj/wiki/fund_lists_08.seize_the_fire
-
-# ------------------------08. Seize the Fire (exam problem) ----------------------------------------------------
 
 fires = input().split('#')
 well = int(input())
