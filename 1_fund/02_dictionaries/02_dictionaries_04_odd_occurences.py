@@ -1,5 +1,5 @@
 
-# ----------------------------- 04.odd occurrences --------------------------------------
+# ----------------------------- 04.odd occurrences ----------------------------
 
 '''
 Write a program that extracts all elements from a given sequence of words

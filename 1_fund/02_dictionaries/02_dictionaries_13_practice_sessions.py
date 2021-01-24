@@ -1,7 +1,32 @@
 
 # -----------------------10. Practice Sessions (exam problem) ------------------
 
-# -------100 points -------------------
+'''
+Write a program, that keeps information about roads and the racers who practice on them.
+When the practice begins, you’re going to start receiving data until you get the "END" message.
+There are three possible commands:
+*  "Add->{road}->{racer}"
+    > Add the road if it doesn't exist in your collection and add the racer to it.
+
+* "Move->{currentRoad}->{racer}->{nextRoad}"
+    > Find the racer on the current road and move him to the next one, only if he exists in the current road.
+    Both roads will always be valid and will already exist.
+
+*  "Close->{road}"
+    >  Find the road and remove it from the sessions, along with the racers on it if it exists.
+
+In the end, print all of the roads with the racers who have practiced and ordered by
+    * the count of the racers in descending order,
+    * then by the roads in ascending order.
+
+The output must be in the following format:
+    Practice sessions:
+    {road}
+    ++{racer}
+    ++{racer}
+'''
+
+# --------------------------100 points ----------------------------------------
 road_info = input()
 roads = {}
 
