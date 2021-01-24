@@ -1,6 +1,27 @@
 
 # ------------------------09. Hello, France (exam problem) ---------------------
-# https://github.com/ateneva/softuni_proj/wiki/fund_lists_09.hello_france
+
+'''
+Create a program that calculates the profit after buying some items and selling them on a higher price.
+In order to fulfil that, you are going to need certain data
+    - you will receive a collection of items and a budget in the following format:
+    {type->price|type->price|type->price……|type->price}
+    {budget}
+
+
+If a price for a certain item is higher than the maximum price, don’t buy it.
+Every time you buy an item, you have to reduce the budget with the value of its price.
+    If you don’t have enough money for it, you can’t buy it.
+    Buy as much items as you can.
+
+You have to increase the price of each of the items you have successfully bought with 40%.
+
+Print the list with the new prices and the profit you will gain from selling the items. 
+They need exactly 150$ for tickets for the train,
+    so if their budget after selling the products is enough – print – "Hello, France!"
+    and if not – "Time to go."
+
+'''
 
 items = input().split('|')
 budget = float(input())
