@@ -8,20 +8,22 @@ Print all the numbers in the given range (inclusive)
 '''
 
 # aproach 1: use nested loop
-i = int(input())
-j = int(input())
+def filter_numbers(i, j):
+    divisibles = set()
+    for n in range(i, j+1):
+        for m in range(2, 11):
+            if n % m == 0:
+                divisibles.add(n)
 
-divisibles = set()
-for n in range(i, j+1):
-    for m in range(2, 11):
-        if n % m == 0:
-            divisibles.add(n)
+    print(list(divisibles))
+filter_numbers(int(input()), int(input()))
 
-print(list(divisibles))
 
 # approach 2: use nested comprehension
-divs = [n for n in range(i, j+1)
-                for m in range(2,11) if n % m ==0
-                    ]
+def filter_numbers_app_two(i, j):
+    divs = [n for n in range(i, j+1)
+                    for m in range(2,11) if n % m ==0
+                        ]
+    print(list(set(divs)))
 
-print(list(set(divs)))
+filter_numbers_app_two(int(input()), int(input()))
