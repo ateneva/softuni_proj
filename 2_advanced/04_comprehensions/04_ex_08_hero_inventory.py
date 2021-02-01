@@ -18,35 +18,39 @@ Output
 '''
 
 # approach 1: using only list comprehensions
-heroes = input()
-items = input()
-heroes_inventory = {}
-
-while items != 'End':
-    hero_names = heroes.split(", ")
-    hero_items = items.split("-")
-    hero_name = hero_items[0]
-    item = hero_items[1]
-    cost = int(hero_items[2])
-
-    # add heroes to inventory
-    if hero_name not in heroes_inventory.keys():
-        heroes_inventory[hero_name] = []
-
-    # skip items from inventory if already there
-    if item not in heroes_inventory[hero_name]:
-        heroes_inventory[hero_name].append(item)
-        heroes_inventory[hero_name].append(cost)
-
+def hero_inventory_one():
+    heroes = input()
     items = input()
+    heroes_inventory = {}
 
-#print(heroes_inventory)
-for hero, obtained_items in heroes_inventory.items():
+    while items != 'End':
+        hero_names = heroes.split(", ")
+        hero_items = items.split("-")
+        hero_name = hero_items[0]
+        item = hero_items[1]
+        cost = int(hero_items[2])
 
-    inventory = len([i for i in obtained_items
-                        if obtained_items.index(i) % 2 == 0])
+        # add heroes to inventory
+        if hero_name not in heroes_inventory.keys():
+            heroes_inventory[hero_name] = []
 
-    total_cost = sum([c for c in obtained_items
-                        if obtained_items.index(c) % 2 != 0])
+        # skip items from inventory if already there
+        if item not in heroes_inventory[hero_name]:
+            heroes_inventory[hero_name].append(item)
+            heroes_inventory[hero_name].append(cost)
 
-    print(f'{hero} -> Items: {inventory}, Cost: {total_cost}')
+        items = input()
+
+    #print(heroes_inventory)
+    for hero, obtained_items in heroes_inventory.items():
+
+        inventory = len([i for i in obtained_items
+                            if obtained_items.index(i) % 2 == 0])
+
+        total_cost = sum([c for c in obtained_items
+                            if obtained_items.index(c) % 2 != 0])
+
+        print(f'{hero} -> Items: {inventory}, Cost: {total_cost}')
+
+if __name__ == '__main__':
+    hero_inventory_one()
