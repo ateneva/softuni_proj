@@ -17,7 +17,7 @@ Output
 
 '''
 
-# approach 1: using only list comprehensions
+# approach 1: use a dictionay and list comprehension
 def hero_inventory_one():
     heroes = input()
     items = input()
@@ -52,5 +52,33 @@ def hero_inventory_one():
 
         print(f'{hero} -> Items: {inventory}, Cost: {total_cost}')
 
+################################################################################
+
+# appraoch 2:
+        # step 1: build a dictionary within a dictionary
+        # step 2: use a dictionary comprehension
+
+def heroes_inventory():
+    heroes = {name: {} for name in input().split(", ")}
+
+    while True:
+        hero_items = input().split("-")
+        name = hero_items[0]
+
+        if name == 'End':
+            break
+
+        item = hero_items[1]
+        cost = int(hero_items[2])
+
+        if item not in heroes[name]:
+            heroes[name][item] = cost
+
+    for name in heroes:
+        inventory = len(heroes[name])
+        total_cost = sum(heroes[name].values())
+        print (f'{name} -> Items: {inventory}, Cost: {total_cost}')
+
 if __name__ == '__main__':
-    hero_inventory_one()
+    #hero_inventory_one()
+    heroes_inventory()
