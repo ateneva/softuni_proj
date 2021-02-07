@@ -1,7 +1,9 @@
-################################################################################
-# ----------------------------Exercises-----------------------------------------
 
 # -----------Problem 1: Reverse numbers with a stack ---------------------------
+
+'''
+Write a program that reads N integers from the console and reverses them using a stack
+'''
 
 def reverse(numbers):
     #numbers = input().split(' ')
