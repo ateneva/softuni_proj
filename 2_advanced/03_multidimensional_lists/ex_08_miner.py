@@ -108,6 +108,8 @@ while directions:
     new_col = 0
     position = get_new_position(starting_position, new_row, new_col, direct)
 
+    # if new position is not valid,
+    # remain on current position and ignore the current command
     if is_valid(position, n):
         final_position.insert(0, position)
         starting_position = position  # reset initial position for next run

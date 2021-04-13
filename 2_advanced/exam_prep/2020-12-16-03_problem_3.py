@@ -17,15 +17,15 @@ def get_magic_triangle(n):
         for col in range(0, row + 1):
             if col - 1 < 0:
                 new_row.append(1)
-            elif col >= len(result[row-1]):
+            elif col >= len(triangle[row-1]):
                 new_row.append(1)
             else:
-                upper_left = result[row - 1][col - 1]
-                upper_right = result[row - 1][col]
+                upper_left = triangle[row - 1][col - 1]
+                upper_right = triangle[row - 1][col]
                 new_box = upper_left + upper_right
                 new_row.append(new_box)
 
-        result.append(new_row)
+        triangle.append(new_row)
     return triangle
 
 print(get_magic_triangle(6))
