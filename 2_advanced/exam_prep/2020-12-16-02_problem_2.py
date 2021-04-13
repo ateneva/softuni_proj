@@ -34,7 +34,7 @@ Constraints
 
 '''
 
-def get_matrix(size):
+def get_square_matrix(size):
     matrix = []
     for _ in range(size):
         matrix_line = [x for x in input()]
@@ -92,7 +92,7 @@ final_string = initial_string.split()
 
 # get matrix
 matrix_size = int(input())
-matrix = get_matrix(matrix_size)
+matrix = get_square_matrix(matrix_size)
 
 for m in matrix:
     print(m)

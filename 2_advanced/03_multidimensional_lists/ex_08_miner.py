@@ -31,7 +31,8 @@ If there are no more commands and none of the above cases had happened,
 
 from collections import deque
 
-def get_matrix(size):
+
+def get_square_matrix(size):
     matrix = []
     for _ in range(size):
         matrix_line = [x for x in input().split()]
@@ -94,7 +95,7 @@ game_over = False
 all_collected = False
 
 # get matrix
-field = get_matrix(n)
+field = get_square_matrix(n)
 
 # determine initial position and available coal
 starting_position = get_initial_position(field)

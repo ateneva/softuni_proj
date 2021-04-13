@@ -40,7 +40,7 @@ Constraints
     - There will be no case in which the snake will go through itself.
 '''
 
-def get_matrix(size):
+def get_square_matrix(size):
     matrix = []
     for _ in range(size):
         matrix_line = [x for x in input()]
@@ -102,7 +102,7 @@ food_eaten = 0
 
 # get territory
 territory_size = int(input())
-territory = get_matrix(territory_size)
+territory = get_square_matrix(territory_size)
 
 # get starting position
 starting_position = get_initial_position(territory)
