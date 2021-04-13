@@ -6,32 +6,36 @@ matrix diagonals (absolute value).
     - The next N lines holds the values for every row - N numbers separated by a space
 '''
 
-size = int(input())
-matrix = []
-primary = 0
-secondary = 0
+def get_square_matrix(n):
+    matrix = []
+    for _ in range(n):
+        nums = [int(i) for i in input().split()]
+        matrix.append(nums)
+    return matrix
 
-for _ in range(size):
-    nums = [int(i) for i in input().split()]
-    matrix.append(nums)
+def calculate_primary(n):
+    primary = 0
+    for i in range(n):
+        for j in range(n):
+            if i == j:
+                primary_diagonal = square_matrix[i][j]
+                primary += primary_diagonal
+    return primary
 
-#print(matrix)
+def calculate_secondary(n):
+    secondary = 0
+    for i in range(n):
+        for j in range(n):
+            if (i + j) == n-1:
+                secondary_diagonal = square_matrix[i][j]
+                secondary += secondary_diagonal
+    return secondary
 
-for i in range(size):
-    for j in range(size):
-        if i == j:
-            primary_diagonal = matrix[i][j]
-            primary += primary_diagonal
 
-# print(primary)
+n = int(input())
+square_matrix = get_square_matrix(n)
+primary_diagonal = calculate_primary(n)
+secondary_diagonal = calculate_secondary(n)
 
-for i in range(size):
-    for j in range(size):
-        if (i + j) == size-1:
-            secondary_diagonal = matrix[i][j]
-            secondary += secondary_diagonal
-
-# print(secondary)
-
-difference = abs(primary - secondary)
+difference = abs(primary_diagonal - secondary_diagonal)
 print(difference)
