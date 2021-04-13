@@ -34,8 +34,8 @@ def calculate_secondary(n):
 
 n = int(input())
 square_matrix = get_square_matrix(n)
-primary_diagonal = calculate_primary(n)
-secondary_diagonal = calculate_secondary(n)
+primary_d = calculate_primary(n)
+secondary_d = calculate_secondary(n)
 
-difference = abs(primary_diagonal - secondary_diagonal)
+difference = abs(primary_d - secondary_d)
 print(difference)
