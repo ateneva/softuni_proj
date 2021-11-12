@@ -43,4 +43,4 @@ companies = dict(sorted(companies.items(), key=lambda s: s[0]))
 for k, v in companies.items():
     print(k)
     for c in v:
-        print(f'-- {c}')-
+        print(f'-- {c}')
