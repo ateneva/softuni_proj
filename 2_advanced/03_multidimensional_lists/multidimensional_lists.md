@@ -94,3 +94,23 @@
 
 ## Multidimensional problems
 
+* [01_sum_matrix_elements.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/01_sum_matrix_elements.py)
+* [02_sum_matrix_columns.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/02_sum_matrix_columns.py)
+* [03_primary_diagonal.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/03_primary_diagonal.py)
+* [04_symbol_in_matrix.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/04_symbol_in_matrix.py)
+* [05_square_with_maximum_sum.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/05_square_with_maximum_sum.py)
+
+* [ex_01_diagonal_difference.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_01_diagonal_difference.py)
+* [ex_02_squares_in_matrix.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_02_squares_in_matrix.py)
+* [ex_03_maximal_sum.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_03_maximal_sum.py)
+* [ex_04_matrix_shuffling.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_04_matrix_shuffling.py)
+* [ex_05_snake_moves.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_05_snake_moves.py)
+* [ex_06_knight_game.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_06_knight_game.py)
+* [ex_07_bombs.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_07_bombs.py)
+* [ex_08_miner.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_08_miner.py)
+* [ex_09_radioactive_vampire_bunnies.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/03_multidimensional_lists/ex_09_radioactive_vampire_bunnies.py)
+
+
+* [2020-06-07-02_snake.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/exam_prep/2020-06-07-02_snake.py)
+* [2020-12-16-02_problem_2.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/exam_prep/2020-12-16-02_problem_2.py)
+* [2021-04-14-02_darts_game.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/exam_prep/2021-04-14-02_darts_game.py)
