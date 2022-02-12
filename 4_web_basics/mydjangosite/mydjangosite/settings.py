@@ -20,24 +20,39 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-pg_^^=22onc@j@uef52j7aude@+hgzi2e!!4@8e_q=8vl98kd6'
+SECRET_KEY = 'django-insecure-1pd67#i3(qqyo#b9u)ra9p572b9lv91u$wos*lrz6va+gtv536'
 
+# DEBUG = True shows error messages on localhost and allows for easier debugging
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# hosts that can be used to access the site
+ALLOWED_HOSTS = [
+    '127.0.0.1',            # localhost
+    'demo-django-app.com'   # prod
+]
 
 
 # Application definition
 
-INSTALLED_APPS = [
+# ensure there's an ending commas so that _APPS is recognized as a tuple and not string
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+)
+
+THIRD_PARTY_APPS = ()
+
+# refer to the class defined in softuni_proj/4_web_basics/mydjangosite/demo_app/apps.py
+PROJECT_APPS = (
+    'demo_app.apps.DemoAppConfig',
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,3 +1,4 @@
+## initial setup
 ### create a virtual environment
 ```bash
 python3 -m venv django_venv
@@ -25,11 +26,11 @@ python manage.py runserver
 
 ### django project structure
 ![](images/mydjangosites.png)
-* `settings.py` - configuration file for the project
-* `urls.py` - holds the contents of the project
-* `manage.py` - executes commands for the project
+* `settings.py` is the configuration file of the project
+* `urls.py` holds the web content of the project
+* `manage.py` is used to execute commands for the project
 
-### create a new app
+## create a new app
 ```bash
 python manage.py startapp demo_app
 
@@ -43,8 +44,10 @@ django-admin startapp secondary_app
 * the app is created by default in the same directory as the `manage.py` file
   * `admin.py` is the admin page of the app
   * `models.py` stores the backend logic for the app
-  * `views.py`  stroes the frontend logic for the app
-  * `migrations.py` ise used to propogate changes to the model files
+  * `views.py` stores the business logic for the app
+    * function-based views
+    * class-based views
+  * `migrations.py` is used to reflect changes to the model files
 
 ### what is the difference between a django app and a django project?
 * **project**
@@ -53,9 +56,24 @@ django-admin startapp secondary_app
 
 * **app**
   * a web application that does something
-  * an app can be in multiple projects
+  * essentially, an app is like a separate module
 
-### to include an app in a project, add a reference to its config class in INSTALLED_APPS
+
+## ADJUST configuration of the project
+
+* **Add the domain name** through which your app should be accessible to ALLOWED_HOSTS
+![](images/alllowed-hosts-default.png)
+
+```python
+# hosts that can be used to access the site
+ALLOWED_HOSTS = [
+    '127.0.0.1',            # localhost
+    'demo-django-app.com'   # prod
+]
+```
+
+* **To include an app in a project**, add a reference to its config class in `settings.py`
+
 ![](images/installed-apps-default.png)
 ```python
 INSTALLED_APPS = [
@@ -65,8 +83,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mydjangosite.demo_app.apps.DemoAppConfig'
+    'demo_app.apps.DemoAppConfig'
 ]
+```
+
+* **Point to your backend database**
+![](images/default-django-db.png)
+```python
+
 ```
 
 ### update views.py
