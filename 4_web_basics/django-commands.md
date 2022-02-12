@@ -26,7 +26,7 @@ python manage.py runserver
 python manage.py startapp <app_name>
 ```
 
-### manage.py
+### python -m django
 ```bash
 python -m django version
 python -m django help

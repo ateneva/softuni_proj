@@ -88,10 +88,50 @@ INSTALLED_APPS = [
 ```
 
 * **Point to your backend database**
+
 ![](images/default-django-db.png)
 ```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'service': 'my_service',
+            'passfile': '.my_pgpass',
+        },
+    }
+}
 
+#my_service
+[my_service]
+host=localhost
+user=USER
+dbname=NAME
+port=5432
+
+#.my_pgpass
+localhost:5432:NAME:USER:PASSWORD
 ```
+
+```python
+# settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/path/to/my.cnf',
+        },
+    }
+}
+
+# my.cnf
+[client]
+database = NAME
+user = USER
+password = PASSWORD
+default-character-set = utf8
+```
+
+https://docs.djangoproject.com/en/4.0/ref/databases/
 
 ### update views.py
 ```python
