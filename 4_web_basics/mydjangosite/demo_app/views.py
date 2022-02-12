@@ -9,7 +9,7 @@ from demo_app.models import Task
 # return values from the connected backend database
 def home_page(request):
     tasks_list = Task.objects.all()
-    output = "; ".join(f"{t.task_title}: {t.task_text}"
+    output = "; ".join(f"{t.title}: {t.text}"
                        for t in tasks_list)
     if not output:
         output = "There are no created tasks!"

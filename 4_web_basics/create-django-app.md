@@ -43,7 +43,23 @@ django-admin startapp secondary_app
 ![](images/demo-app.png)
 * the app is created by default in the same directory as the `manage.py` file
   * `admin.py` is the admin page of the app
-  
+    * it reads data from your models to provide interface where people can manage the content of the app
+    * to access the django admin, you need a super user
+    ```bash
+    python manage.py createsuperuser
+    superuser: ateneva
+    pass: djangodemo
+    ```
+    * after creation, start the server and navigate to the admin site `http://127.0.0.1:8000/admin/` 
+    ![](images/django-admin-screen.png)
+    
+    * in order to see the backend data in the django admin section, register all the app models in `admin.py`
+    ![](images/django-admin-with-our-data.png)
+      * this will make it possible to **easily manage** (create, update, delete) **data stored in the database**
+      * when tasks are added through the interface, they're stored in the backend database and returned on the home page
+    ![](images/home-page-with-back-end-content.png)      
+
+
   * `models.py` stores the backend data logic for the app
     * each model is a Python class
     * use `models.py` to create a database table for the app

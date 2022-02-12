@@ -27,6 +27,7 @@ python manage.py startapp <app_name>
 python manage.py makemigrations         # create migrations for the added model;
 python manage.py migrate                # apply migrations to your project
 python manage.py inspectdb > models.py  # integrate django with existing DB & generate a models file
+python manage.py createsuperuser        # create super user for the django admin
 ```
 
 ### python -m django
