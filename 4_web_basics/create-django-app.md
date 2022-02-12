@@ -19,6 +19,8 @@ django-admin startproject mydjangosite
 
 ### django project structure
 ![](../../../../../../var/folders/dp/ylq2fsb959qdhsb_jb2ds9d00000gr/T/TemporaryItems/NSIRD_screencaptureui_5efxww/Screenshot 2022-02-12 at 12.48.54.png)
+
+![](images/mydjangosite.png)
 * `settings.py` - configuration file for the project
 * `urls.py` - holds the contents of the project
 * `manage.py` - executes commands for the project
