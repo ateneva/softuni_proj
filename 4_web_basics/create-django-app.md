@@ -57,9 +57,12 @@ django-admin startapp secondary_app
 NB! django can also be integrated with existing db by `python manage.py inspectdb > models.py`
 
 
-  * `views.py` stores the business logic for the app
-    * function-based views
-    * class-based views
+  * `views.py` stores the main logic that needs to happen when a URL is reached
+    * each view takes a web-request and returns a web response
+    * views can be: 
+      * function-based views
+      * class-based views
+    * the names of the views are usually related to the URL being reached
     
 
   * `migrations.py` is used to reflect changes to the model files
