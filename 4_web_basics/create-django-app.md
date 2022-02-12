@@ -43,11 +43,28 @@ django-admin startapp secondary_app
 ![](images/demo-app.png)
 * the app is created by default in the same directory as the `manage.py` file
   * `admin.py` is the admin page of the app
-  * `models.py` stores the backend logic for the app
+  
+  * `models.py` stores the backend data logic for the app
+    * each model is a Python class
+    * use `models.py` to create a database table for the app
+      * each model maps to a single database table
+      * each attribute of the model represents a database field
+      * the databse by default is created in `public.<appname_classname>`
+  
+
+  ![](images/create-db-tables-with-django.png)
+
+NB! django can also be integrated with existing db by `python manage.py inspectdb > models.py`
+
+
   * `views.py` stores the business logic for the app
     * function-based views
     * class-based views
+    
+
   * `migrations.py` is used to reflect changes to the model files
+    * all migration files are stored in `<app_name>.migrations`
+    * a log of all applied migrations is stored in `public.django_migrations` table
 
 ### what is the difference between a django app and a django project?
 * **project**

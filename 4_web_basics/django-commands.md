@@ -24,6 +24,9 @@ python manage.py version
 python manage.py help
 python manage.py runserver
 python manage.py startapp <app_name>
+python manage.py makemigrations         # create migrations for the added model;
+python manage.py migrate                # apply migrations to your project
+python manage.py inspectdb > models.py  # integrate django with existing DB & generate a models file
 ```
 
 ### python -m django
@@ -36,5 +39,6 @@ python -m django startapp <app_name>
 ```
 
 https://docs.djangoproject.com/en/4.0/ref/django-admin/
+https://docs.djangoproject.com/en/4.0/howto/legacy-databases/
 
 
