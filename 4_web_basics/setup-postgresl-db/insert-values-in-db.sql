@@ -1,3 +1,9 @@
+INSERT INTO pet_hotel.hotel(hotel_id, hotel_name, hotel_stars)
+VALUES(1, 'Grand Pets Hotel', 5);
+
+INSERT INTO pet_hotel.hotel(hotel_id, hotel_name, hotel_stars)
+VALUES(2, 'Pets Heaven', 2);
+
 WITH pet_owner_values AS (
   SELECT
     1       AS owner_id,
@@ -165,10 +171,3 @@ SELECT
   register_date,
   unregister_date
 FROM cats_room_values;
-
-
-INSERT INTO pet_hotel.hotel(hotel_id, hotel_name, hotel_stars)
-VALUES(1, 'Grand Pets Hotel', 5);
-
-INSERT INTO pet_hotel.hotel(hotel_id, hotel_name, hotel_stars)
-VALUES(2, 'Pets Heaven', 2);
