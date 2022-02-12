@@ -58,10 +58,12 @@ django-admin startapp secondary_app
   * a web application that does something
   * essentially, an app is like a separate module
 
+---------
 
-## ADJUST configuration of the project
+### ADJUST configuration of the project
 
-* **Add the domain name** through which your app should be accessible to ALLOWED_HOSTS
+* ### **Add the domain name** through which your app should be accessible to **ALLOWED_HOSTS**
+
 ![](images/alllowed-hosts-default.png)
 
 ```python
@@ -72,22 +74,8 @@ ALLOWED_HOSTS = [
 ]
 ```
 
-* **To include an app in a project**, add a reference to its config class in `settings.py`
 
-![](images/installed-apps-default.png)
-```python
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'demo_app.apps.DemoAppConfig'
-]
-```
-
-* **Point to your backend database**
+* ### **Point to your backend database**
 
 ![](images/default-django-db.png)
 ```python
@@ -133,7 +121,22 @@ default-character-set = utf8
 
 https://docs.djangoproject.com/en/4.0/ref/databases/
 
-### update views.py
+* ### **To include an app in a project**, add a reference to its config class in `settings.py`
+
+![](images/installed-apps-default.png)
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'demo_app.apps.DemoAppConfig'
+]
+```
+
+* update ITS `views.py`
 ```python
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -145,7 +148,7 @@ def home_page(request):
 ```
 
 
-### create urls.py in the app directory
+* create `urls.py` in the app directory
 ```python
 from django.urls import path, include
 from . import views
@@ -155,7 +158,7 @@ urlpatterns = [
 ]
 ```
 
-### update urls.py in the project directory to point to the app urls
+* update `urls.py` in the project directory to point to the app urls
 ```python
 from django.contrib import admin
 from django.urls import path, include
