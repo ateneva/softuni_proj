@@ -1,11 +1,11 @@
 ## initial setup
-### create a virtual environment
+* ### create a virtual environment
 ```bash
 python3 -m venv django_venv
 source django_venv/bin/activate
 ```
 
-### install django
+* ### install django
 ```bash
 python3 -m pip install django
 python3 -m django --version
@@ -13,18 +13,18 @@ python3 -m django --version
 https://docs.djangoproject.com/en/4.0/topics/install/
 
 
-### start a django project
+* ### start a django project
 ```bash
 django-admin startproject mydjangosite
 ```
 
-### verify that your django project works
+* ### verify that your django project works
 ```bash
 cd mydjangosite
 python manage.py runserver
 ```
 
-### django project structure
+* ### django project structure
 ![](images/mydjangosites.png)
 * `settings.py` is the configuration file of the project
 * `urls.py` holds the web content of the project
@@ -39,7 +39,7 @@ django-admin startapp main_app
 django-admin startapp secondary_app
 ```
 
-### django app structure
+* ### django app structure
 ![](images/demo-app.png)
 * the app is created by default in the same directory as the `manage.py` file
   * `admin.py` is the admin page of the app
@@ -73,7 +73,6 @@ ALLOWED_HOSTS = [
     'demo-django-app.com'   # prod
 ]
 ```
-
 
 * ### **Point to your backend database**
 
