@@ -17,43 +17,55 @@ https://docs.djangoproject.com/en/4.0/topics/install/
 django-admin startproject mydjangosite
 ```
 
-### django project structure
-![](../../../../../../var/folders/dp/ylq2fsb959qdhsb_jb2ds9d00000gr/T/TemporaryItems/NSIRD_screencaptureui_5efxww/Screenshot 2022-02-12 at 12.48.54.png)
-
-![](images/mydjangosite.png)
-* `settings.py` - configuration file for the project
-* `urls.py` - holds the contents of the project
-* `manage.py` - executes commands for the project
-
 ### verify that your django project works
 ```bash
 cd mydjangosite
 python manage.py runserver
 ```
 
+### django project structure
+![](images/mydjangosites.png)
+* `settings.py` - configuration file for the project
+* `urls.py` - holds the contents of the project
+* `manage.py` - executes commands for the project
+
 ### create a new app
 ```bash
-python manage.py startapp demo
+python manage.py startapp demo_app
 
 # OR  
 django-admin startapp main_app
 django-admin startapp secondary_app
 ```
 
-### update settings installed apps
-```python
-# Application definition
+### django app structure
+![](images/demo-app.png)
+* the app is created by default in the same directory as the `manage.py` file
+  * `admin.py` is the admin page of the app
+  * `models.py` stores the backend logic for the app
+  * `views.py`  stroes the frontend logic for the app
+  * `migrations.py` ise used to propogate changes to the model files
 
+### what is the difference between a django app and a django project?
+* **project**
+  * a collection of configuration and apps for a given website
+  * a project can contain multiple apps
+
+* **app**
+  * a web application that does something
+  * an app can be in multiple projects
+
+### to include an app in a project, add a reference to its config class in INSTALLED_APPS
+![](images/installed-apps-default.png)
+```python
 INSTALLED_APPS = [
-    'demo.apps.DemoConfig',
-    'main_app',
-    'secondary_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mydjangosite.demo_app.apps.DemoAppConfig'
 ]
 ```
 
