@@ -1,17 +1,30 @@
+### create a virtual environment
+```bash
+python3 -m venv django_venv
+source django_venv/bin/activate
+```
+
+### install django
+```bash
+python3 -m pip install django
+python3 -m django --version
+```
+https://docs.djangoproject.com/en/4.0/topics/install/
+
 
 ### start a django project
-```
+```bash
 django-admin startproject mydjangosite
 ```
 
 ### verify that your django project works
-```
+```bash
 cd mydjangosite
 python manage.py runserver
 ```
 
 ### create a new app
-```
+```bash
 python manage.py startapp demo
 
 # OR  
@@ -19,8 +32,8 @@ django-admin startapp main_app
 django-admin startapp secondary_app
 ```
 
-###update settings installed apps
-```
+### update settings installed apps
+```python
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,9 +49,8 @@ INSTALLED_APPS = [
 ]
 ```
 
-
 ### update views.py
-```
+```python
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -46,8 +58,11 @@ from django.http import HttpResponse
 def home_page(request):
 	return render(request, 'index.html')
 	# subdirectory within templates expected
+```
 
-create urls.py in the app directory
+
+### create urls.py in the app directory
+```python
 from django.urls import path, include
 from . import views
 
@@ -57,8 +72,7 @@ urlpatterns = [
 ```
 
 ### update urls.py in the project directory to point to the app urls
-
-```
+```python
 from django.contrib import admin
 from django.urls import path, include
 
