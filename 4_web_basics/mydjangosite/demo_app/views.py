@@ -9,11 +9,10 @@ from demo_app.models import Task
 # return values from the connected backend database
 def home_page(request):
     tasks_list = Task.objects.all()
-    output = "; ".join(f"{t.title}: {t.text}"
-                       for t in tasks_list)
-    if not output:
-        output = "There are no created tasks!"
+    context = {'tasks_list': tasks_list}
+    if not context:
+        context = "There are no created tasks!"
 
-    return HttpResponse(output)
+    return render(request, 'demo_app/index.html', context)
 
 # class-based views
