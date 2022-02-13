@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH = False        # define whether URL paths shoould expect slash ath the end or not
 
 # Application definition
 
