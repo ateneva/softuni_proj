@@ -14,6 +14,7 @@ django-admin help --commands  # list all available django-admin-commands
 django-admin help --command   # show help for a particular command
 django-admin version          # display the djangpo version
 
+django-admin startproject <project_name>
 django-admin runserver
 django-admin startapp <app_name>
 ```

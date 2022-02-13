@@ -204,3 +204,7 @@ urlpatterns = [
     path('', include('demo.urls')),
 ]
 ```
+* the `views.py` contains the logic for what happens when a given url is reached
+* the `urls.py` file uses the `views.py` to configure the URLs
+* It is strongly desirable to **avoid hard-coding URL patterns**
+
