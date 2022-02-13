@@ -30,14 +30,23 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+)
+
+THIRD_PARTY_APPS = ()
+
+# refer to the class defined in softuni_proj/4_web_basics/mydjangosite/demo_app/apps.py
+PROJECT_APPS = (
+    'employees.apps.EmployeesConfig',
+)
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': '1123QwER',
-        'PASSWORD': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '1123QwER',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
