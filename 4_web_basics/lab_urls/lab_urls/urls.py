@@ -19,6 +19,7 @@ from employees import views
 
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('', views.home_page),                      # localhost:8000
+    #path('', views.home_page),  # localhost:8000
+    path('', views.employees_by_department),
     path('departments', include('employees.urls')),
 ]

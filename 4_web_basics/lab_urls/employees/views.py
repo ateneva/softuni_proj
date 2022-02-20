@@ -53,7 +53,20 @@ def department_employees(request, department_id):
 	# raise Http404
 
 
+# use render fucntion to return an html template page
+	# context = an optional argument used to add dictionary values to a template
+
+def employees_by_department(request):
+	context = {"employee": "Peter Smith", "department": 'Marketing'}
+	return render(
+		request=request,
+		template_name='deps.html',
+		context=context
+	)
+
+
 # re-direct to home_page
 def go_to_home(request):
 	return redirect(to='/')
 	#return HttpResponseRedirect()
+
