@@ -3,7 +3,6 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 # Create your views here.
 
-
 # A function is a Django view if:
 # * accepts HTTPrequest as a first parameter
 # * returns an HTTPresponse
@@ -17,7 +16,6 @@ def home_page(request):
 				'x-annie-header': 'Django',
 			},
 		)
-
 
 def department_list(request):
 	return HttpResponse('This is department list page')
@@ -54,19 +52,21 @@ def department_employees(request, department_id):
 
 
 # use render fucntion to return an html template page
-	# context = an optional argument used to add dictionary values to a template
-
+# context = an optional argument used to add dictionary values to a template
 def employees_by_department(request):
-	context = {"employee": "Peter Smith", "department": 'Marketing'}
+	context = {
+		"employee": "Peter Smith",
+		"department": 'Marketing',
+		"departments": ['Finance', 'Marketing', 'HR', 'Technology']
+	}
+
 	return render(
 		request=request,
 		template_name='deps.html',
 		context=context
 	)
 
-
 # re-direct to home_page
 def go_to_home(request):
 	return redirect(to='/')
 	#return HttpResponseRedirect()
-
