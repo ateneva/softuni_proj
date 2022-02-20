@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render, redirect
 # Create your views here.
 
 
@@ -50,3 +51,9 @@ def department_employees(request, department_id):
 		# is the same as
 	# return HTTPresponse(status=404)
 	# raise Http404
+
+
+# re-direct to home_page
+def go_to_home(request):
+	return redirect(to='/')
+	#return HttpResponseRedirect()

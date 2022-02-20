@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.department_list),
     #path('/<int:id>', views.department_details),
     path('/<int:department_id>', views.department_employees),
+    path('/go-to-home', views.go_to_home),
 
 
     # instead of writing departments multiple times in here, it's better to include it as a prefix in the project urls
