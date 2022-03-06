@@ -12,30 +12,39 @@
 
 > [_https://softuni.bg/trainings/resources/video/49934/video-22-may-2020-tanya-staneva-python-advanced-may-2020/2839_](https://softuni.bg/trainings/resources/video/49934/video-22-may-2020-tanya-staneva-python-advanced-may-2020/2839)
 
-  
+### Tuples: 
+* sequences of **immutable** objects
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/cc6b2e1d-5dda-48b8-8f75-c58324eb7052/image.png)
+```python
+# creating a tuple 
+t = (1,2,3)
+print(t[0])
 
-  
+# creating a tuple with a single element
+t = (1, )
+```
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/fcb9b8cc-2f5e-4c96-bfe8-bef97b18ad0c/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/2e9ec6a2-1fdc-461a-a856-a25874bc9993/image.png)
-
-  
+### Tuple Methods
+There are only 2 tuple methods
 
 | Method | Description |
 | ---| --- |
 | [count()](https://www.w3schools.com/python/ref_tuple_count.asp) | Returns the number of times a specified value occurs in a tuple |
 | [index()](https://www.w3schools.com/python/ref_tuple_index.asp) | Searches the tuple for a specified value and returns the position of where it was found |
 
-  
+```python
+numbers = (1,2,1,3,1)
+numbers.count(1) # 3
+```
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/d01be009-21c9-43bc-9d77-4ad6c5fb518d/image.png)
+```python
+names = ("Pesho", "Gosho", "Gosho")
+names.index("Gosho") # 1
+```
 
-  
+**Problem: Count same values**
+* _You will be given floating point numbers separated by a space_
+* _Count the occurences of each value and print it_
 
 ```python
 # count the same values
@@ -51,59 +60,60 @@ for k, v in occurences.items():
     print(f'{k} - {v} times')
 ```
 
-  
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/bcdb6cc1-b48a-4cb1-9ce1-b69b6d9a16a6/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/a3690f83-f814-4f85-be2e-d5d1fadd01ca/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/d277024c-8beb-46ee-8ee4-ae03ea883b6d/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/f1d90ed0-418e-4baa-b1e3-bd7cb8c9e16b/image.png)
-
-  
+### Tuple unpacking
+* Tuple unpacking extracts the tuple elements and assigns them
 
 ```python
-a = set("We're gonna need a bigger boat.")
-b = set("I'm sorry, Dave. I'm afraid I can't do that.")
+data = (1,2,3)
+x, y, z = data
 
-print_set(a - b)  # find members that are in a but not in b
-print_set(a | b)  # find the members that are in either a or b
-print_set(a ^ b)  # find the members that are not in both
-print_set(a & b)  # find the members that are in both
+print(x)  # 1
+print(y)  # 2
+print(z)  # 3
 ```
 
+### the SET method
+* You can use the set method to extract only unique elements from a list
+* the **SET** method returns a set with UNIQUE values
+
+```python
+numbers = [1,2,2,3,1,4,5,4]
+unique_numbers = list(set(numbers)) # [1,2,3,4,5
+```
+
+### SET
+* unordered collection of items
+* each set element is unique
+* SETS are **mutable**, so we can add or remove elements
   
+### Set Operators
+```python
+a = set([1,2,3,4])
+b = set([3,4,5,6])
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/5e552ada-28f6-4a4e-adc3-c80e3ff46d72/image.png)
+print(a - b)  # find members that are in a but not in b
+print(a | b)  # find the members that are in either a or b
+print(a ^ b)  # find the members that are not in both
+print(a & b)  # find the members that are in both
+```
 
-  
+**Set Methods**
+```python
+a = set([1,2,3,4])
+b = set([3,4,5,6])
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/400044da-e7e7-42b0-a4df-cc056a08b1db/image.png)
+print(a.union(b))                 # equivalent to a | b
+print(a.intersection(b))          # equivalent to a & b
+print(a.issubset(b))              # equivalent to a <= b
+print(a.issuperset(b))            # equivalent to a >= b
+print(a.difference(b))            # equivalent to a - b
+print(a.symmetric_difference(b))  # equivalent to a ^ b
+```
 
-  
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/3e751892-e9e2-43cf-aa34-4e212d864acf/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/37ef9580-309e-4ef7-aa64-4498c08289fa/image.png)
-
-  
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/3e2aa8b2-b8c0-4e82-90a5-d0dd3a0a78f0/image.png)
-
-  
+**Problem: Unique Names**
+* You will be given a list and you have to print unique items
+  * the order does not matter
 
 ```python
 # create a non-empty set
@@ -121,8 +131,6 @@ for i in range(n):
 for person in unique_names:
     print(person)
 ```
-
-  
 
 Set Methods 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -148,14 +156,6 @@ Set Methods
 | [update()](https://www.w3schools.com/python/ref_set_update.asp) | Update the set with the union of this set and others |
 
 
-![](https://t4668229.p.clickup-attachments.com/t4668229/bed2f9cb-d87c-4115-884c-0eb568118232/image.png)
-
-  
-
-![](https://t4668229.p.clickup-attachments.com/t4668229/0ce7b941-e66c-43b5-b5cd-eed3fe4ec259/image.png)
-
-  
-
 ```python
 num_cars = int(input())
 parking = set()
@@ -177,28 +177,8 @@ else:
     print("Parking Lot is Empty")
 ```
 
-## Tuples and sets problems
-
-* [01_tuples_count_the_same_values.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_01_tuples_count_the_same_values.py)
-* [02_tuples_average_student_grades.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_02_tuples_average_student_grades.py)
-* [03_sets_record_unique_names.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_03_sets_record_unique_names.py)
-* [04_sets_parking_lot.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_04_sets_parking_lot.py)
-* [05_sets_softuni_party.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_05_sets_softuni_party.py)
-
-
-* [ex_01_unique_usernames.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_01_unique_usernames.py)
-* [ex_02_sets_of_elements.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_02_sets_of_elements.py)
-* [ex_03_periodic_table.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_03_periodic_table.py)
-* [ex_04_count_symbols.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_04_count_symbols.py)
-* [ex_05_phonebook.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_05_phonebook.py)
-* [ex_06_longest_intersection.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_06_longest_intersection.py)
-* [ex_07_battle_of_names.py](https://github.com/ateneva/softuni_proj/blob/main/2_advanced/02_tuples_and_sets/02_ex_07_battle_of_names.py)
-
-
-
 Further Reading
 ===============
-
 
 Sets in Python – Real Python
 
