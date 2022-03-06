@@ -98,7 +98,7 @@ print(a ^ b)  # find the members that are not in both
 print(a & b)  # find the members that are in both
 ```
 
-**Set Methods**
+### Set Methods
 ```python
 a = set([1,2,3,4])
 b = set([3,4,5,6])
