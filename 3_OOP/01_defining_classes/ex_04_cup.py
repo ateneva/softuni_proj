@@ -15,9 +15,9 @@ class Cup:
         self.quantity = quantity
 
     # method
-    def fill(self, milimeters):
-        if self.quantity < self.size:
-            self.quantity += milimeters
+    def fill(self, litres):
+        if self.size - self.quantity > 0:
+            self.quantity += litres
         return self.quantity
 
     # method
@@ -26,6 +26,7 @@ class Cup:
         return space
 
 cup = Cup(100, 50)
-cup.fill(50)
-cup.fill(10)
+print(cup.status())
+cup.fill(40)
+cup.fill(20)
 print(cup.status())

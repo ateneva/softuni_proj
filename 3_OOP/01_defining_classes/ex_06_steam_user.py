@@ -39,7 +39,7 @@ class SteamUser:
         else:
             return f"{game} is already in your library"
 
-    def stats(self):
+    def status(self):
         games_count = len(self.games)
         return f"{self.username} has {games_count} games. Total play time: {self.played_hours}"
 
@@ -50,4 +50,4 @@ print(user.play("Oxygen Not Included", 5))
 print(user.buy_game("CS:GO"))
 print(user.buy_game("Oxygen Not Included"))
 print(user.play("Oxygen Not Included", 6))
-print(user.stats())
+print(user.status())
