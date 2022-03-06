@@ -1,6 +1,6 @@
 from typing import List
-from pokemon import Pokemon
-
+from project.pokemon import Pokemon
+# from pokemon import Pokemon   # use this to test locally
 
 class Trainer:
     def __init__(self, name):
