@@ -16,5 +16,9 @@ class Car:
         return f"This is {self.name} {self.model} with engine {self.engine}"
 
 
+# create an object based on the class
 car = Car("Kia", "Rio", "1.3L B3 I4")
 print(car.get_info())
+
+car_2 = Car('Audi', 'a6', "1.3L B3 I4")
+print(car_2.get_info())

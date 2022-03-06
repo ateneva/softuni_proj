@@ -96,23 +96,41 @@ my_laptop = Laptop("Inspiron 15", "Dell")
   * `author`
   * `pages`
 
+* **a Class can call another class**
+
 ```python
+class Author:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+
 class Book:
-    def __init__(self, name, author, pages):
-        self.name = name
+    def __init__(self, title, author, pages):
+        self.title = title
         self.author = author
         self.pages = pages
 
+    def open(self):
+        print(f'Opening the book {self.title} with author {self.author.first_name}')
 
-book = Book("My Book", "Me", 200)
-print(book.name)
+    def close(self):
+        pass
+
+author = Author("Jay", "Shetty")      # create an object based on the class
+book = Book("My Book", author, 200)   
+print(book.title)
 print(book.author)
 print(book.pages)
+print(book.author.first_name)
+print(book.author.last_name)
+print(book.open())
 ```
+
 
 ### Class Methods: 
 * we define the behaviour of an object using `methods`
-* A method is like a `function` that works only within a `class`
+* A method is a `function` that works only within a `class`
 
 ```python
 class Animal:
@@ -122,12 +140,13 @@ class Animal:
     def sleep(self):
         return "sleeping.."
 
-animal = Animal("cat")
+animal = Animal("cat")  # create an object based on the class
 print(animal.sleep())   # sleeping...
 ```
 
 ### Using a Class
 * this means creating new instances of an object and executing operation on the instances
+  * **Each object** that was created based on a given class **will have a unique id**
 
 ```python
 class Person():
@@ -138,7 +157,7 @@ class Person():
     def eat(self):
         return 'eating...'
 
-person = Person()
+person = Person()   # create an object based on the class
 print(person.eat()) # eating...
 ```
 
