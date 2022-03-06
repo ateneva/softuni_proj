@@ -12,13 +12,22 @@
 > [https://softuni.bg/trainings/resources/video/51194/video-30-june-2020-isen-ivanova-python-oop-june-2020/2841](https://softuni.bg/trainings/resources/video/51194/video-30-june-2020-isen-ivanova-python-oop-june-2020/2841)
 
 ### OOP principles
+* relies on the concept of classes and objects
+* a class is used to create individual instance of an object
 
-**Splitting code into functions and classes to:** 
-* improve readability
-* allow for easier debugging
+### Advantages of OOP
+* provides a clear program structure **and a clean code**
+* **reduces complexity**
+* makes it easy to **write re-usable code**
+* could test each behaviour of an object separately
+* facilitates **easy maintenance and modification** of existing code
 
 
 ### Rules of thumb: 
+* **Splitting code into functions and classes:** 
+  * improves readability
+  * allows for easier debugging
+
 ‼️ A single class method should complete a single task
 
 ‼️ The class method should clearly state what it does
@@ -30,10 +39,17 @@
 ### What is the difference between a class and a function?
 
 ‼️ The difference between a function and a class is that 
-* **the class retains a state for itself** 
-* and every class execution may be different depending on the state
+* **the class retains a `state` for itself** 
+* and every class execution may be different depending on the `state`
 
-  
+* `state`
+  * helps to distinguish an object from other objects
+    * a phone could have `colour`, `size` and `weight`
+
+* `behaviour`
+  * the tasks that an object performs
+    * a phone could turn on or off
+
 ```python
 class Phone:
     # state
@@ -54,6 +70,10 @@ Classes create new types of objects that allow instances of that type to be made
 * ➡️ Class attributes **preserve the state** 🔻
   * i.e. each class instance can have attributes for maintaining its state
   * class instance can also have methods for modifying its state
+
+### What is an instance?
+* specific realization of an object of a certain class
+* The creation of an instance is called `instantiation`
 
 ```python
 class Laptop:
@@ -89,6 +109,53 @@ print(book.name)
 print(book.author)
 print(book.pages)
 ```
+
+### Class Methods: 
+* we define the behaviour of an object using `methods`
+* A method is like a `function` that works only within a `class`
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def sleep(self):
+        return "sleeping.."
+
+animal = Animal("cat")
+print(animal.sleep())   # sleeping...
+```
+
+### Using a Class
+* this means creating new instances of an object and executing operation on the instances
+
+```python
+class Person():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def eat(self):
+        return 'eating...'
+
+person = Person()
+print(person.eat()) # eating...
+```
+
+### Problems: 
+###### Car
+* create a class `Car` that receives: `name`, `model`, `engine` upon initialization
+* it should have a method called `get_info()` which returns `This is {name} {model} with engine {engine}`
+
+https://github.com/ateneva/softuni_proj/blob/main/3_OOP/01_defining_classes/ex_01_car.py
+
+###### Music
+* create a class `Music` that receives `title`, `artist` and `lyrics` upon initialization
+* it should have 2 methods: 
+  * `print_info()` - returns `This is {title} from {artist}`
+  * `play()` - returns the lyrics
+
+https://github.com/ateneva/softuni_proj/blob/main/3_OOP/01_defining_classes/04_music.py
 
 ### Data classes - as of Python 3.7
 * a data class comes with basic functionality that has already been implemented
@@ -172,6 +239,14 @@ def scopes():
 
 **Problem: Scope Mess**
 * Fix the provided code, so that it prints the result as expected
+```
+expected output:
+global 
+outer: local
+inner: nonlocal
+outer: nonlocal
+global: changed!
+```
 
 ```python
 def outer():
