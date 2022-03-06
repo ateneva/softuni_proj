@@ -1,4 +1,4 @@
-from ex_08_spoopify.project.song import Song
+from song import Song
 
 class Album:
     def __init__(self, name, songs=None):
