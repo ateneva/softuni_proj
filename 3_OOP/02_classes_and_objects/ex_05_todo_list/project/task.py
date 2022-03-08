@@ -1,3 +1,18 @@
+'''
+The Task class should receive a name (string) and a due_date (str) upon initialization. A task also has two attributes: comments (empty list) and completed set to False by default.
+The Task class should also have five additional methods:
+-	change_name(new_name: str)
+o	Changes the name of the task and returns the new name.
+o	If the new name is the same as the current name, returns "Name cannot be the same."
+
+-	change_due_date(new_date: str)
+o	Changes the due date of the task and returns the new date.
+o	If the new date is the same as the current date, returns "Date cannot be the same."
+
+-	add_comment(comment: str)
+o	Adds a comment to the task.
+
+'''
 
 from typing import List
 
