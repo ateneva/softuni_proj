@@ -1,6 +1,28 @@
+'''
+-	add_album(album: Album)
+o	Adds an album to the collection and returns "Band {band_name} has added their newest album {album_name}."
+o	If the album is already added, returns "Band {band_name} already has {album_name} in their library."
 
-from ex_08_spoopify.project.song import Song
-from ex_08_spoopify.project.album import Album
+-	remove_album(album_name: str)
+o	Removes the album from the collection and returns "Album {name} has been removed."
+o	If the album is published, returns "Album has been published. It cannot be removed."
+o	If the album is not in the collection, returns "Album {name} is not found."
+
+-	details()
+o	Returns the information of the band, with their albums, in this format:
+"Band {name}
+ {album details}
+ ...
+ {album details}"
+
+'''
+
+
+from project.song import Song
+from project.album import Album
+
+#from song import Song
+#from album import Album
 
 class Band:
     def __init__(self, name):
