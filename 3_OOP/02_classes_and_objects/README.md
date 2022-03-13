@@ -216,3 +216,6 @@ print(MyClass.__dict__)
 print(first.__dict__)       # {'instance_variable': 2}
 print(second.__dict__)      # {'instance_variable': 3}
 ```
+
+**Problem: Smartphone**
+https://github.com/ateneva/softuni_proj/blob/main/3_OOP/02_classes_and_objects/05_smartphone.py
