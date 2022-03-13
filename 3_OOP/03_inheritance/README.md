@@ -110,3 +110,51 @@ child = Child()
 print(child.say_hi())       # Hello!
 print(child.go_to_school)   # I go to school
 ```
+###### Example:
+In a folder called project create two files: animal.py and dog.py:
+* In the `animal.py` file, create a class called `Animal` with a single method `eat()` that returns: `"eating…"`. 
+* In the `dog.py` file, create a class called `Dog` with a single method `bark()` that returns: `"barking…"`.
+The `Dog` should inherit from `Animal`.
+
+
+```python
+class Animal:
+    def eat(self):
+        return "eating..."
+
+class Dog(Animal):
+    def bark(self):
+        return "barking..."
+
+dog = Dog()
+print(dog.eat())
+print(dog.bark())
+```
+
+### Multiple Inheritance
+* when a `child` inherits from more than 1 `parent` class
+* allows modelling of complex relationships
+
+###### Example:
+```python
+class Father:
+    def __init__(self):
+        self.father_name = "Taylor Evans"
+
+class Mother:
+    def __init__(self):
+        self.mother_name = "Bet Williams"
+
+class Daughter(Father, Mother):
+    def __init__(self):
+        Father.__init__(self)
+        Mother.__init__(self)
+
+    def get_parent_info(self):
+        return f'Father: {self.father_name}, Mother: {self.mother_name}'
+
+child = Daughter()
+print(child.get_parent_info())  # Father: Taylor Evans, Mother: Bet Williams
+```
+
+
