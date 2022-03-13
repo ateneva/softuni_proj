@@ -1,7 +1,7 @@
 ## Instantiation
 * It is known as "calling" the class
   * creates an empty object - new instance of the class
-  * assings the object to a local variable
+  * assigns the object to a local variable
 
 ```python
 class Person: 
@@ -14,7 +14,7 @@ print(person.age)   # 25
 ```
 
 * `__init__` is a magic method that creates **objects with instances, customized to a specific initial state**
-  * the initial state is authomatically invoked for the newly created class instance
+  * the initial state is automatically invoked for the newly created class instance
 
 ```python
 class Laptop:
@@ -72,7 +72,7 @@ print(x.__dict__)   # {"name": "Max"}
 ```
 
 * **Methods**
-  * we could **change the state** of hte object using methods
+  * we could **change the state** of the object using methods
 
 ```python
 class Dog:
@@ -102,6 +102,29 @@ print(str(my_instance))         # This is My Class
 print(my_instance.__str__())    # This is My CLass
 print(my_instance)
 ```
+
+```python
+class Person:
+    def __init__(self, age):
+        self.age = age
+
+    def celebrate_birthday(self):
+        self.age += 1
+        return f"Person is now {self.age}"
+
+    def set_new_age(self, new_age):
+        self.age = new_age
+        
+    def __str__(self):
+        return f'I am person and I am {self.age} years old'
+
+person = Person(27)
+print(person.age)
+person.set_new_age(2)
+print(person.age)
+print(person) # "I am person and I am 2 years old" INSTEAD OF <class '__main__.Person'>
+```
+
 **Problem: Point**
 https://github.com/ateneva/softuni_proj/blob/main/3_OOP/02_classes_and_objects/02_point.py
 
@@ -133,24 +156,44 @@ print(first_laptop.name == second_laptop.name)    # False
 
 ###### BAD PRACTICE
 * declare or remove data attributes outside the class
+  *  no subsequent instances of that class will have them
+
+* give identical names to class and instance attributes
+  * Python starts searching from `local scope` to `enclosing scope`
+    * if the attribute is found in the `local scope`, the `enclosing scope` is never searched
+
 ```python
 class Laptop:
-    def __init__(self, model):
+  brands = ["Dell", "Asus"]     # class variable
+  
+    def __init__(self, name, model):
+        self.name = name
         self.model = model
+        self.brands = ["instance_scope"]
+        print(self.brands)
 
-my_laptop = Laptop("Swift")
-
+my_laptop = Laptop("Swift", "DID")
 my_laptop.ram = 8
 Laptop.brand = "Dell"
 del my_laptop.model
+      
+first_laptop = Laptop("Latitude 5300", "AT5300")
+second_laptop = Laptop("Inspiron 15", "AT15")
+print(first_laptop.brands)          # instance scope
+print(second_laptop.brands)         # instance scope
+print(Laptop.brands)                # ['Dell', 'Asus']
 ```
+
+### NOTE:
 
 * `instance` variables are **INDEPENDENT** from one instance to another
 **NB!** modifying a `class` variable **AFFECTS all instances** at the same time
 
 ```python
 class Dog:
-    tricks = []                 # mistaken use of a class variable
+    tricks = []                 
+    # should be better defined as an instance attribute
+    # else all Dogs will know the same tricks
 
     def __init__(self, name):
         self.name = name
@@ -159,6 +202,7 @@ poodle = Dog("Bella")
 beagle = Dog("Max")
 poodle.tricks.append('roll over')
 print(beagle.tricks)            # shared by all dogs ['roll over']
+
 ```
 
 ###### GOOD PRACTICE
@@ -189,7 +233,7 @@ https://github.com/ateneva/softuni_proj/blob/main/3_OOP/02_classes_and_objects/0
 
 ### Special Data Attributes
 * `__doc__` attribute - provides the documentation of the object as a string
-* `__dict__` attribute - provides a dictionary containing a module's symbol table
+* `__dict__` attribute - converts a class instance to a dictionary
 
 ```python
 class MyClass:
@@ -213,8 +257,9 @@ first = MyClass(2)
 second = MyClass(3)
 
 print(MyClass.__dict__)
-print(first.__dict__)       # {'instance_variable': 2}
-print(second.__dict__)      # {'instance_variable': 3}
+print(first.__dict__)           # {'instance_variable': 2}
+print(second.__dict__)          # {'instance_variable': 3}
+print(type(second.__dict__))    # <class 'dict'>
 ```
 
 **Problem: Smartphone**

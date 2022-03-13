@@ -21,6 +21,8 @@ class Vet:
         self.animals = []
         # be careful where you register the empty list for the instance attribute
         # self.animals = animals will default to the class variable, not the instance variable
+        # it is a VERY BAD practice to declare mutable arguments as DEFAULT in the constructor
+        # https://softuni.bg/trainings/resources/video/69754/video-25-february-2022-ines-kenova-python-oop-february-2022/3591
 
     def register_animal(self, animal_name: str):
         if len(Vet.animals) < Vet.space:            # how to refer to a class variable
