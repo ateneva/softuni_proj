@@ -76,3 +76,37 @@ print(student.get_id())     # 10035464
 ```
 
 ###### Example: Food
+In a folder called project create two files: food.py and fruit.py:
+* In the `food.py` file, create a class called `Food` which will receive an `expiration_date` (str) upon initialization.
+
+
+* In the `fruit.py` file, create a class called Fruit with will receive a `name` (str) and an expiration_date (str) upon initialization. 
+
+
+* `Fruit` should inherit from `Food`.
+
+https://github.com/ateneva/softuni_proj/tree/main/3_OOP/03_inheritance/01_food
+
+## Forms of Inheritance
+* `Single`
+* `Multiple`
+* `Multilevel`
+* `Hierarchical`
+* `Hybrid` - consists of multiple types of inheritance
+
+### Single Inheritance
+* when a `child` inherits properties from a `single parent` class only
+
+```python
+class Parent:
+    def say_hi(self):
+        return "Hello!"
+
+class Child(Parent):
+    def go_school(self):
+        return "I go to school"
+
+child = Child()
+print(child.say_hi())       # Hello!
+print(child.go_to_school)   # I go to school
+```
