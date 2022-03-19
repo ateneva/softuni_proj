@@ -345,3 +345,35 @@ print(s.say_hi())
 print(s.relation())
 ```
 
+---------
+
+### MRO (Method Order Resolution)
+* it is the **order in which methods should be inherited** in the presence of `multiple inheritance`
+* it is possible to see MRO of a class using `mro()` method of the class
+
+```python
+class Parent:
+    pass
+
+class FirstChild(Parent):
+    pass
+
+class SecondChild(Parent):
+    pass
+
+class GrandChild(SecondChild, FirstChild):
+    pass
+
+class GrandChildTwo(FirstChild, SecondChild):
+    pass
+
+print(GrandChild.mro())
+print(GrandChildTwo.mro())
+```
+
+```
+[<class '__main__.GrandChild'>, <class '__main__.SecondChild'>, <class '__main__.FirstChild'>, <class '__main__.Parent'>, <class 'object'>]
+[<class '__main__.GrandChildTwo'>, <class '__main__.FirstChild'>, <class '__main__.SecondChild'>, <class '__main__.Parent'>, <class 'object'>]
+```
+
+----
