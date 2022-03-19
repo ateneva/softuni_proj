@@ -196,6 +196,7 @@ In a folder called project create two files: food.py and fruit.py:
 
 https://github.com/ateneva/softuni_proj/tree/main/3_OOP/03_inheritance/01_food
 
+-----
 
 ### Multiple Inheritance
 * when a `child` inherits from more than 1 `parent` class
@@ -207,9 +208,15 @@ class Father:
     def __init__(self):
         self.father_name = "Taylor Evans"
 
+    def say_name(self):
+        return self.father_name
+
 class Mother:
     def __init__(self):
         self.mother_name = "Bet Williams"
+
+    def say_name(self):
+        return self.mother_name
 
 class Daughter(Father, Mother):
     def __init__(self):
@@ -220,9 +227,28 @@ class Daughter(Father, Mother):
         return f'Father: {self.father_name}, Mother: {self.mother_name}'
 
 child = Daughter()
-print(child.get_parent_info())  # Father: Taylor Evans, Mother: Bet Williams
+print(child.get_parent_info())
+print(child.say_name())
+```
+* **NOTE**: we do not use `super` because by default it refers to the first specified class e.g. in this case `Father`
+
+  * If we switch the place of `Father` and `Mother`, e.g. `class Daughter(Mother, Father)`
+    `super` will refer to to `Mohter`
+
+
+* **NOTE**: if the two parent classes have methods called in the exact name way, 
+  calling the said method from the child class **will return the info from the class that has been specified first**
+
+
+* **NOTE**: python assigns priority of searching for methods in the parent classes from `LEFT` to `RIGHT`
+  * e.g. first in `Father`. then in `Mother`, etc.
+
+```
+Father: Taylor Evans, Mother: Bet Williams
+Taylor Evans
 ```
 
+-----
 
 ### Multilevel Inheritance
 * when a `child` class becomes a parent for another `child` class
