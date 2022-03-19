@@ -117,8 +117,8 @@ AttributeError: 'Employee' object has no attribute 'commission'
 * `Single`       - when a `child` inherits properties from a `single parent`
 * `Multiple`     - when a `child` inherits from more than 1 `parent` class
 * `Multilevel`   - when a `child` class becomes a parent for another `child` class
-* `Hierarchical`
-* `Hybrid` - consists of multiple types of inheritance
+* `Hierarchical` - when more than 1 `child` classes are created from a single `parent` class
+* `Hybrid`       - consists of multiple types of inheritance
 
 --------
 
@@ -282,7 +282,6 @@ print(grand_child.age)          # 19
 print(grand_child.address)      # Badema-4-A-11
 ```
 
-
 ```python
 class Person:
     def __init__(self, name, age):
@@ -303,3 +302,46 @@ class Manager(Employee):
 person = Person("Test", 30)
 employee = Employee("My Name", 20, 1015, 500)
 ```
+
+-----------
+
+### Hierarchical inheritance
+```python
+class Parent:
+  def __init__(self, name):
+    self.name = name
+
+  def my_name(self):
+      return self.name
+
+  def say_hi(self):
+    return f"Hi! I am {self.name}"
+
+
+class Daughter(Parent):
+  def __init__(self, name):
+    super().__init__(name)
+
+  def relation(self):
+    return f"I am {Parent.my_name(p)}'s daughter"
+
+
+class Son(Parent):
+ def __init__(self, name):
+      super().__init__(name)
+
+ def relation(self):
+    return f"I am my {Parent.my_name(p)}'s son"
+
+p = Parent("Diana")
+d = Daughter('Annie')
+s = Son('Rossen')
+print(p.say_hi())
+
+print(d.say_hi())
+print(d.relation())
+
+print(s.say_hi())
+print(s.relation())
+```
+
