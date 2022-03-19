@@ -377,3 +377,44 @@ print(GrandChildTwo.mro())
 ```
 
 ----
+
+## Mixins
+* a mixin is a class that implements a specific **set of features that is needed in many different classes**
+* A mixin class **HAS NO DATA**, **only methods**
+* mixins cannot be instantiated by themselves
+* mixins are **used to extend functionality**
+
+
+* convention is that: 
+  * all features that are **NOT exclusively specific** to a given class, should be added to a mixin
+  * in cases of `multiple inheritance` mixins are added at the end
+
+```python
+class Vehicle:
+    def __init__(self, position):
+        self.position = position
+
+    def travel(self, destination):
+        pass
+
+
+class RadioMixin():
+   def play_song_on_station(self, station_frequency):
+       return f'playing song on radio frequency {station_frequency}'
+
+class Car(Vehicle, RadioMixin):
+    pass
+
+class Clock(RadioMixin):
+    pass
+
+car = Car('Sofia')
+clock = Clock()
+print(car.play_song_on_station(95.0))
+print(clock.play_song_on_station(100.3))
+```
+
+```
+playing song on radio frequency 95.0
+playing song on radio frequency 100.3
+```
