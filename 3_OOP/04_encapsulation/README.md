@@ -113,7 +113,7 @@ red_car.drive()           # driving max speed 200
 red_car.__max_speed = 10  # won't change because it is name mangled
 red_car.drive()           # driving max speed 200
 
-red_car.max_speed = 10    # still changes to 10
+red_car.max_speed = 10    # adds a new public attribute which is different than the  one in th class
 print(red_car.max_speed)  # max_speed = 10
 print(red_car.drive())    # driving max speed 200
 ```
