@@ -6,8 +6,11 @@ class CreditCard:
         self.name = name
         self.__pin = pin        # private attribute
 
+    def __is_pin__correct(self, pin):
+        return self.__pin == pin
+
     def change_pin(self, old_pin, new_pin):
-        if old_pin == self.__pin:
+        if self.__is_pin__correct(old_pin):
             self.__pin = new_pin
             return
         raise ValueError("Old pin is not correct")

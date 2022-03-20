@@ -58,6 +58,9 @@ print(person._age)	# 25
 * Name mangling is used to show that a **variable should NOT be accessed outside the class**
   * it also makes the attribute inaccessible to its `child` classes
 
+* Name mangling can also be applied to class `methods`
+  * `private` methods CANNOT be accessed outiside the class
+
 ```python
 class CreditCard:
     def __init__(self, number, expiry_date, cvv, name, pin):
@@ -67,8 +70,11 @@ class CreditCard:
         self.name = name
         self.__pin = pin        # private attribute
 
+    def __is_pin__correct(self, pin):
+        return self.__pin == pin
+
     def change_pin(self, old_pin, new_pin):
-        if old_pin == self.__pin:
+        if self.__is_pin__correct(old_pin):
             self.__pin = new_pin
             return
         raise ValueError("Old pin is not correct")
