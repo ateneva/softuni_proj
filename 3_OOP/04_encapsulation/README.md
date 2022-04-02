@@ -128,46 +128,15 @@ print(red_car.drive())    # driving max speed 200
 
 ### Getter and Setter Methods
 
-* used to access and change the `private` variables that are part of the class
+* used to access and change the `private` variables and methods that are part of the class
+* the `pythonic` way of defining `getters` and `setters` is using `properties`
   * you can use `props` + tab to pre-populate the `getter` and `seter` syntax
   * we don't do getter and setters on ALL `attributes` - only on the ones that we want to validate
+  
 
-```python
-class Person:
-    def __init__(self, name, age=0):
-        self.name = name
-        self.__age = age
-
-    def info(self):
-        print(self.name)
-        print(self.__age)
-
-    def get_age(self):       # getter
-        print(self.__age)
-
-    def set_age(self, age):  # setter
-        self.__age = age
-
-
-person = Person('Peter', 25)
-        
-# accessing data using class method
-person.info()	# Peter 25
-        
-# changing age using setter
-person.set_age(26)
-person.get_age()	# 26
-```
-
-------------------------------------------------
-
-#### Getter and Setters (1
-
-* the `pythonic` way of defining `getters` and `setters` is using `properties`
-
-* BY defining `properties`, you **can change the internal implementation** of a class **without affecting the program*
-
-* use `properties` to introduce validations within your methods
+* it's not necessary that every getter (i.e. `@property`) should have a setter (`@name.setter`)
+  * a class could only have getters (i.e. `@property`)
+  * if a class needs to have a setter (i.e. `@name.setter`), then it should have a getter (i.e. `@property`)
 
 ```python
 class Person:
@@ -215,7 +184,7 @@ red_car.max_speed = 512     # changes the speed to 447
 red_car.drive()             # driving max speed 447
 ```
 
-* you should use Python `properties` to **apply rules** to an attribute
+* you should use Python `properties` to **validate** to an attribute
 
 ```python
 class Person:

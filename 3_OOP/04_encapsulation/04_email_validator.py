@@ -20,9 +20,6 @@ class EmailValidator:
         self.mails = mails
         self.domains = domains
 
-    # it's not necessary that every getter should have a setter
-    # a class could only have getters
-
     def __is_name_valid(self, name):
         return len(name) >= self.min_length
 
