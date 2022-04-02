@@ -128,7 +128,7 @@ print(red_car.drive())    # driving max speed 200
 
 ### Getter and Setter Methods
 
-* used to access and change the `private` variables as they are part of the class
+* used to access and change the `private` variables that are part of the class
 
 ```python
 class Person:
