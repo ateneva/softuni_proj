@@ -1,5 +1,10 @@
 class Person:
     def __init__(self, age=0):
+
+        # we do not define checks in the _init__ :
+        #  they are only applied during initialization and not on subsequent change attempt
+        if age < 0:
+            raise ValueError("Age is not valid")
         self.age = age
 
     @property
