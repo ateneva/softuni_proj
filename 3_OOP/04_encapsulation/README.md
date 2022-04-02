@@ -232,3 +232,8 @@ class Person:
         self.__age = value
 ```
 
+---------------------
+
+## Further Reading:
+* https://www.freecodecamp.org/news/python-property-decorator/
+* https://medium.com/techtofreedom/understand-the-property-decorator-of-python-classes-a6e75011cde2
