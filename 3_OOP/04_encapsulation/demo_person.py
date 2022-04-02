@@ -20,8 +20,8 @@ class Person:
     def age(self, age):
         if age < 18:
             self.__age = 18
-        else:
-            self.__age = age
+            raise Exception("Age must be greater than 18")
+        self.__age = age
 
 
 person = Person(25)

@@ -129,6 +129,8 @@ print(red_car.drive())    # driving max speed 200
 ### Getter and Setter Methods
 
 * used to access and change the `private` variables that are part of the class
+  * you can use `props` + tab to pre-populate the `getter` and `seter` syntax
+  * we don't do getter and setters on ALL `attributes` - only on the ones that we want to validate
 
 ```python
 class Person:
