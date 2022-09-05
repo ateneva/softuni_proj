@@ -44,3 +44,18 @@ def odd_occurences_list(word_sequence):
     print(" ".join(occurrences))
 
 odd_occurences_list(input())
+
+# OR # list comprehensions approach
+
+
+words = input().split(" ")
+occurrences = []
+
+words_lower = [word.lower() for word in words]
+
+for word in words_lower:
+    if words_lower.count(word) % 2 != 0:
+        if word not in occurrences:
+            occurrences.append(word)
+
+print(" ".join(occurrences))
