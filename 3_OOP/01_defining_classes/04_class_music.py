@@ -1,14 +1,20 @@
 
 '''
-Create class named Music that receives title (string), artist (string) and
-lyrics (string) upon initialization. The class should also have methods print_info() and play().
+Create class named Music that receives:
+ * title (string),
+ * artist (string) and
+ * lyrics (string) upon initialization.
+
+The class should also have methods print_info() and play().
+
 The print_info() method should return the following:
 'This is "{title}" from "{artist}"'
+
 The play() method should return the lyrics.
 '''
 
 class Music:
-    def __init__(self, title, artist, lyrics):
+    def __init__(self, title: str, artist: str, lyrics: str):
         self.title = title
         self.artist = artist
         self.lyrics = lyrics
