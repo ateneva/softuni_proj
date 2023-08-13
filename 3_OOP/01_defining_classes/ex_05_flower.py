@@ -1,6 +1,7 @@
 
 '''
-Create a class called Flower. Upon initialization, the class should receive
+Create a class called Flower.
+Upon initialization, the class should receive
 name and water_requirements.
 
 The flower should also have an attribute called

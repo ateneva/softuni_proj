@@ -16,7 +16,7 @@ space left in the cup.
 
 
 class Cup:
-    def __init__(self, size, quantity: int):
+    def __init__(self, size: int, quantity: int):
         self.size = size
         self.quantity = quantity
 

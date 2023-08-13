@@ -302,6 +302,11 @@ class Position:
         h = (sin((phi_2 - phi_1) / 2)**2
              + cos(phi_1) * cos(phi_2) * sin((lam_2 - lam_1) / 2)**2)
         return 2 * r * asin(sqrt(h))
+
+
+oslo = Position('Oslo', 10.8, 59.9)
+vancouver = Position('Vancouver', -123.1, 49.3)
+print(oslo.distance_to(vancouver)) #7181.7841229421165
 ```
 
 ### Scope & Namespace
@@ -467,14 +472,31 @@ print(song.play())
 Further Reading
 ===============
 
-###### **Data Classes in Python 3.7+ (Guide) – Real Python**
-
-Data classes are one of the new features of Python 3.7. With data classes you do not have to write boilerplate code to get proper initialization, representation and comparisons for your objects.
-
-<https://realpython.com/python-data-classes/>
-
 ###### **Python Type Checking (Guide) – Real Python**
 
 In this guide, you'll look at Python type checking. Traditionally, types have been handled by the Python interpreter in a flexible but implicit way. Recent versions of Python allow you to specify explicit type hints that can be used by different tools to help you develop your code more efficiently.
 
 (<https://realpython.com/python-type-checking/>)
+
+###### **Data Classes in Python 3.7+ (Guide) – Real Python**
+
+Data classes are one of the new features of Python 3.7. 
+With data classes you do not have to write boilerplate code to get
+proper initialization, representation and comparisons for your objects.
+
+<https://realpython.com/python-data-classes/>
+
+
+###### **Why Should you Use Dataclases**
+
+- **Less boilerplate code**
+
+
+- **More readability**
+
+
+- **Better code maintainability**
+
+<https://towardsdatascience.com/9-reasons-why-you-should-start-using-python-dataclasses-98271adadc66>
+
+
