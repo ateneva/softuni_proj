@@ -1,3 +1,4 @@
 *.dylib
 *.pyc
 *.zip
+.DS_Store
