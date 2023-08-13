@@ -1,9 +1,10 @@
 from typing import List
 from project.pokemon import Pokemon
-# from pokemon import Pokemon   # use this to test locally
+#from pokemon import Pokemon   # use this to test locally
+
 
 class Trainer:
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         self.pokemon: List[Pokemon] = []
 
@@ -29,18 +30,18 @@ class Trainer:
 
         return result
 
+
 pokemon = Pokemon("Pikachu", 90)
 
 print(pokemon.pokemon_details())
-trainer = Trainer("Ash")
 
+trainer = Trainer("Ash")
 print(trainer.add_pokemon(pokemon))
+
 second_pokemon = Pokemon("Charizard", 110)
 
 print(trainer.add_pokemon(second_pokemon))
-print(trainer.add_pokemon(second_pokemon))
 
-print(trainer.release_pokemon("Pikachu"))
 print(trainer.release_pokemon("Pikachu"))
 
 print(trainer.trainer_data())
