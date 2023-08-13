@@ -16,7 +16,7 @@ Create a class called Programmer. Upon initialization, it should receive name (s
 
 
 class Programmer:
-    def __init__(self, name, language, skills):
+    def __init__(self, name: str, language: str, skills: int):
         self.name = name
         self.language = language
         self.skills = skills
@@ -39,6 +39,7 @@ class Programmer:
 
         elif self.skills < skills_needed:
             return f"{self.name} needs {skills_needed-self.skills} more skills"
+
 
 programmer = Programmer("John", "Java", 50)
 

@@ -1,4 +1,3 @@
-
 '''
 Create a class called SteamUser.
 Upon initialization it should receive username (string), games (list).
@@ -20,7 +19,7 @@ Add three methods to the class:
 
 
 class SteamUser:
-    def __init__(self, username, games):
+    def __init__(self, username: str, games: list):
         self.username = username
         self.games = games
         self.played_hours = 0
@@ -41,7 +40,8 @@ class SteamUser:
 
     def status(self):
         games_count = len(self.games)
-        return f"{self.username} has {games_count} games. Total play time: {self.played_hours}"
+        return f"{self.username} has {games_count} games. " \
+               f"Total play time: {self.played_hours}"
 
 
 user = SteamUser("Peter", ["Rainbow Six Siege", "CS:GO", "Fortnite"])

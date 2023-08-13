@@ -11,7 +11,7 @@ Create two functions:
 
 
 class Hero:
-    def __init__(self, name, health):
+    def __init__(self, name: str, health: int):
         self.name = name
         self.health = health
 
@@ -24,6 +24,7 @@ class Hero:
 
     def heal(self, amount):
         self.health += amount
+
 
 hero = Hero("Peter", 100)
 print(hero.defend(50))
