@@ -13,6 +13,7 @@ The print_info() method should return the following:
 The play() method should return the lyrics.
 '''
 
+
 class Music:
     def __init__(self, title: str, artist: str, lyrics: str):
         self.title = title

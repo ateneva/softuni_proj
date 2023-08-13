@@ -1,5 +1,4 @@
 
-
 '''
 Create a class called Flower. Upon initialization, the class should receive
 name and water_requirements.
@@ -15,17 +14,21 @@ The last method should be called status() and it should return "{name} is happy"
 if the flower is happy, otherwise it should return "{name} is not happy".
 '''
 
+
 class Flower:
     def __init__(self, name, water_requirements):
         self.name = name
         self.water_requirements = water_requirements
-        self.is_happy = False           # assign default attribute
-        self.current_water = 0
+        self.is_happy = False
+        self.current_water = 0  # assign default attribute
 
     def water(self, quantity):
         self.current_water += quantity
-        if quantity >= self.water_requirements:
-            self.is_happy = True
+        self.is_happy = self.check_happy_status()
+
+    # keep rule of thumb - 1 method should do 1 thing and its name should be indicative of its behaviour
+    def check_happy_status(self):
+        return self.water_requirements <= self.current_water
 
     def status(self):
         if self.is_happy:
