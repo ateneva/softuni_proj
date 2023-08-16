@@ -16,6 +16,7 @@ o	Returns the player's information, including their skills, in this format:
  ==={skill_name_N} - {skill_mana_cost}"
 '''
 
+
 class Player:
     DEFAULT_GUILD = "Unaffiliated"
 
@@ -39,7 +40,6 @@ class Player:
         result += f'HP: {self.hp}\n'
         result += f'MP: {self.mp}\n'
         result += "".join([f'==={skill} - {cost}\n' for skill, cost in self.skills.items()])
-
 
         return result
 

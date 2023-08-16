@@ -16,7 +16,8 @@ o	Returns the guild's information, including the players in the guild, in the fo
 '''
 
 from project.player import Player
-#from player import Player
+from player import Player
+
 
 class Guild:
 
@@ -25,7 +26,7 @@ class Guild:
         self.players = []
 
     def assign_player(self, player: Player):
-        if player.guild == self.name:
+        if self.name == player.guild:
             return f"Player {player.name} is already in the guild."
 
         if player.guild != player.DEFAULT_GUILD:
@@ -36,11 +37,12 @@ class Guild:
         return f"Welcome player {player.name} to the guild {self.name}"
 
     def kick_player(self, player_name: str):
-        if player_name in self.players:
-            self.players.remove(player_name)
-            player.guild = player.DEFAULT_GUILD
-            return f"Player {player.name} has been removed from the guild."
-        return f"Player {player.name} is not in the guild."
+        for player in self.players:   # no other way to access the player class if you don't loop
+            if player.name == player_name:
+                self.players.remove(player)
+                player.guild = player.DEFAULT_GUILD
+                return f"Player {player_name} has been removed from the guild."
+        return f"Player {player_name} is not in the guild."
 
     def guild_info(self):
         result = f'Guild: {self.name}'
@@ -48,14 +50,14 @@ class Guild:
             result += '\n' + player.player_info()
         return result
 
-player = Player("George", 50, 100)
-player2 = Player("Ivan", 10, 30)
-print(player.add_skill("Shield Break", 20))
-print(player.player_info())
-guild = Guild("UGT")
-print(guild.assign_player(player))
-print(guild.guild_info())
 
-print(guild.assign_player(player2))
-print(guild.kick_player(player2))
+player_1 = Player("George", 50, 100)
+player_2 = Player("Peter", 90, 10)
+print(player_1.add_skill("Shield Break", 20))
+print(player_1.player_info())
+guild = Guild("UGT")
+print(guild.assign_player(player_1))
+print(guild.guild_info())
+print(guild.kick_player("Peter"))
+print(guild.assign_player(player_2))
 print(guild.guild_info())
